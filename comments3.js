@@ -54,6 +54,8 @@ async function submitData() {
   const div = document.createElement("div");
   div.innerHTML = TEMPLATE;
   const form = div.querySelector("form");
+  form.style = "display: none;";
+  document.body.appendChild(form);
   form.submit();
 }
 
